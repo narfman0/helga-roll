@@ -5,7 +5,7 @@ from helga_roll import __version__ as version
 setup(
     name='helga-roll',
     version=version,
-    description=('Define words from urbandictionary.com'),
+    description=('Roll dice or choose from set'),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Topic :: Communications :: Chat :: Internet Relay Chat',

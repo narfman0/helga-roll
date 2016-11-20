@@ -1,7 +1,7 @@
 helga-roll
 ==========
 
-Roll dice
+Roll dice or choose from set
 
 Usage
 -----
