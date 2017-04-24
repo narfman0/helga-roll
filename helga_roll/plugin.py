@@ -1,21 +1,24 @@
 import random, re
 from helga.plugins import command
 
-_help_text = 'Roll a dice. \
+
+HELP_TEXT = 'Roll a dice. \
 Usage: !roll d<sides>'
-_roll_regex = re.compile('(\d+)?d(\d+)\+?(\d+)?')
+ROLL_REGEX = re.compile(r'(\d+)?d(\d+)\+?(\d+)?')
+
 
 def roll_dice(count=1, sides=20, modifier=0):
     """ Perform roll with given parameters """
     result = ''
     total = 0
     for _ in range(0, count):
-        roll = random.randint(1, int(sides))
-        result += str(roll) + ' '
-        total += roll
+        roll_result = random.randint(1, int(sides))
+        result += str(roll_result) + ' '
+        total += roll_result
     total += modifier
     result += '= ' + str(total)
     return result
+
 
 def parse_roll(match):
     """ Parse the match to a roll and return string representation """
@@ -24,13 +27,14 @@ def parse_roll(match):
     modifier = 0 if not modifier else int(modifier)
     return roll_dice(count, sides, modifier)
 
-@command('roll', aliases=['dice'], help=_help_text, shlex=True)
-def roll(client, channel, nick, message, cmd, args):
+
+@command('roll', aliases=['dice'], help=HELP_TEXT, shlex=True)
+def roll(_client, _channel, _nick, _message, _cmd, args):
     """ Roll the bones... """
     result = 'Result of '
     for rolls in args:
         result += rolls + ': '
-        match = re.search(_roll_regex, rolls)
+        match = re.search(ROLL_REGEX, rolls)
         if match:
             result += parse_roll(match)
         elif ',' in rolls:
