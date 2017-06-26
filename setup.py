@@ -23,7 +23,9 @@ setup(
     include_package_data=True,
     py_modules=['helga_roll.plugin'],
     zip_safe=True,
-    install_requires=[],
+    install_requires=[
+        'helga',
+    ],
     test_suite='tests.test_roll',
     entry_points=dict(
         helga_plugins=[

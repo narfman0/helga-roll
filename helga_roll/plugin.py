@@ -1,4 +1,5 @@
-import random, re
+import random
+import re
 from helga.plugins import command
 
 
@@ -9,14 +10,17 @@ ROLL_REGEX = re.compile(r'(\d+)?d(\d+)\+?(\d+)?')
 
 def roll_dice(count=1, sides=20, modifier=0):
     """ Perform roll with given parameters """
-    result = ''
     total = 0
+    rolls = []
     for _ in range(0, count):
-        roll_result = random.randint(1, int(sides))
-        result += str(roll_result) + ' '
-        total += roll_result
+        roll = random.randint(1, int(sides))
+        rolls.append(str(roll))
+        total += roll
+    if modifier:
+        rolls.append(str(modifier))
+    result = ' + '.join(rolls)
     total += modifier
-    result += '= ' + str(total)
+    result += ' = ' + str(total)
     return result
 
 

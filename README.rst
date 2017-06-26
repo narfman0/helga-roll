@@ -1,6 +1,12 @@
 helga-roll
 ==========
 
+.. image:: https://badge.fury.io/py/helga-roll.png
+    :target: https://badge.fury.io/py/helga-roll
+
+.. image:: https://travis-ci.org/narfman0/helga-roll.png?branch=master
+    :target: https://travis-ci.org/narfman0/helga-roll
+
 Roll dice or choose from set
 
 Usage
