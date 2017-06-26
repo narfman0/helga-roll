@@ -14,7 +14,7 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Communications :: Chat :: Internet Relay Chat'],
-    keywords='irc bot roll urbandictionary urban dictionary ud',
+    keywords='irc bot roll dice',
     author='Jon Robison',
     author_email='narfman0@gmail.com',
     url='https://github.com/narfman0/helga-roll',
